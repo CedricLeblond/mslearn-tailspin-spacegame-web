@@ -29,3 +29,8 @@ steps:
     feedPublish: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Models'
     allowPackageConflicts: true
   condition: succeeded()
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'dotnet'
+    publishLocation: 'pipeline'
